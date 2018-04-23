@@ -7,16 +7,34 @@
 {% endblock %}
 
 {% block content %}
+<script>
+    var conso_euro= "{{conso_euro}}";
+    var conso_watt = "{{conso_watt}}"
+    var is_elec_heating = "{{is_elec_heating}}"
+    var dysfunction_detected = "{{dysfunction_detected}}"
+</script>
+
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Mon tableau de bord énergie</h1>
     </div>
 </div>
 
- -----> YOUR CODE HERE <-----
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Les dépenses annuelles :</h2>
+        <div class="annual_costs"></div>
+        <h2>Courbe de consommation de l'année 2017:</h2>
+        <div id="flot-placeholder" style="width:300px;height:150px"></div>
+        <h2>Chauffage électrique:</h2>
+        <div class="is_elec_heating"></div>
+        <h2>Dysfonctionnement détecté:</h2>
+        <div class="dysfunction_detected"></div>
+    </div>
+</div>
 
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'dashboard/js/results.js' %}"></script>
+    <script src= '{% static "dashboard/js/results.js" %}'></script>
 {% endblock %}
